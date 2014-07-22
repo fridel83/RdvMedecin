@@ -6,6 +6,7 @@
 
 package RdvMedecin.response;
 
+import java.util.logging.Logger;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -14,7 +15,32 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class ResponseAbstractClass {
-    
-  
-    
+    private Header header;
+    private BodyResponse body; 
+    private static final Logger LOG = Logger.getLogger(ResponseAbstractClass.class.getName());
+
+    public Header getHeader() {
+        return header;
+    }
+
+    public void setHeader(Header header) {
+        this.header = header;
+    }
+
+    public BodyResponse getBody() {
+        return body;
+    }
+
+    public void setBody(BodyResponse body) {
+        this.body = body;
+    }
+
+    public Caller getCaller() {
+        return caller;
+    }
+
+    public void setCaller(Caller caller) {
+        this.caller = caller;
+    }
+    private Caller caller;
 }

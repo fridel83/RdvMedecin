@@ -10,6 +10,6 @@ package RdvMedecin.response;
  *
  * @author fridel
  */
-public class Header {
-     //UserCredentials authHeader = new UserCredentials();
+public class BodyResponse {
+    
 }
