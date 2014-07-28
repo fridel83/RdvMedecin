@@ -29,4 +29,16 @@ public class SpecialiteMedFacade extends AbstractFacade<SpecialiteMed> implement
         super(SpecialiteMed.class);
     }
     
+    public SpecialiteMed getSpecialiteByName(String spec)
+    {
+        try
+        {
+           SpecialiteMed specMed=(SpecialiteMed) getEntityManager().createNamedQuery("SpecialiteMed.findByLibelle").setParameter("libelle",
+           spec).getSingleResult(); 
+           return specMed;
+        }catch(Exception e)
+        {
+            return null;
+        }    
+    }
 }

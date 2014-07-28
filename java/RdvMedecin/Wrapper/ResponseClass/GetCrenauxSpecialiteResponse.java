@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package RdvMedecin.response;
+package RdvMedecin.Wrapper.ResponseClass;
 
 import RdvMedecin.entities.CabinetMedical;
 import RdvMedecin.entities.Crenaux;

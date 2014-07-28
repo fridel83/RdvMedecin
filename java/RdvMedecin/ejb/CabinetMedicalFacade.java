@@ -29,4 +29,18 @@ public class CabinetMedicalFacade extends AbstractFacade<CabinetMedical> impleme
         super(CabinetMedical.class);
     }
     
+    public CabinetMedical getCabinetMedicalByName(String cabinet)
+    {
+        try
+        {
+            CabinetMedical cabinetMed =(CabinetMedical) getEntityManager().createNamedQuery("CabinetMedical.findByNomCabinet").setParameter("nomCabinet",
+            cabinet).getSingleResult();
+            return cabinetMed;
+        }catch(Exception e)
+        {
+            return null;
+        }
+         
+    }
+    
 }

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package RdvMedecin.response;
+package RdvMedecin.Wrapper.ResponseClass;
 
 import java.util.logging.Logger;
 import javax.xml.bind.annotation.XmlRootElement;

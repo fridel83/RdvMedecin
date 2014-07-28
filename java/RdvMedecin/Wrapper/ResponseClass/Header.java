@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package RdvMedecin.response;
+package RdvMedecin.Wrapper.ResponseClass;
 
 /**
  *
  * @author fridel
  */
-public class BodyResponse {
-    
+public class Header {
+     //UserCredentials authHeader = new UserCredentials();
 }
