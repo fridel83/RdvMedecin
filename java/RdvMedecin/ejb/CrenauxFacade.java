@@ -7,9 +7,12 @@
 package RdvMedecin.ejb;
 
 import RdvMedecin.entities.Crenaux;
+import RdvMedecin.entities.MedecinCrenaux;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -29,4 +32,16 @@ public class CrenauxFacade extends AbstractFacade<Crenaux> implements CrenauxFac
         super(Crenaux.class);
     }
     
+    public List<MedecinCrenaux> getCrenauxForSpecialite(String specialite)
+    {
+        try{
+            Query q = getEntityManager().createQuery("SELECT m FROM MedecinCrenaux m inner join m.medecin n inner join n.idspecialiteMed t WHERE t.libelle = :libelle");
+            q.setParameter("libelle", specialite);
+            List<MedecinCrenaux> results = (List<MedecinCrenaux>) q.getResultList();
+            return results;
+        }catch(Exception e)
+        {
+            return null;
+        }
+    }
 }

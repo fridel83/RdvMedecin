@@ -29,4 +29,15 @@ public class VilleFacade extends AbstractFacade<Ville> implements VilleFacadeLoc
         super(Ville.class);
     }
     
+    public Ville getVilleByCodePostal(String code_postal)
+    {
+        try
+        {
+           Ville ville=(Ville) getEntityManager().createNamedQuery("Ville.findByVilleCodePostal").setParameter("villeCodePostal",
+                code_postal).getSingleResult(); 
+           return ville;
+        }catch(Exception e){
+            return null;
+        }   
+    }
 }

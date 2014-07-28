@@ -15,33 +15,15 @@ import javax.ejb.Local;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import javax.jws.soap.SOAPBinding;
+import javax.xml.ws.RequestWrapper;
+import javax.xml.ws.ResponseWrapper;
 /**
  *
  * @author fridel
  */
 @Local
-@WebService(
-            name="RdvWebService",
-            targetNamespace="http://localhost:8080/RdvMedecin",
-            portName="RdvWebServicePort")
 public interface PatientFacadeLocal {
- 
-    @WebMethod
-    public String createPatient(@WebParam(name="nom") String nom, @WebParam(name="num_secu") Integer num_secu, 
-                @WebParam(name="adresse") String adresse, @WebParam(name="email") String email,
-                @WebParam(name="telephone") String telephone,@WebParam(name="code_postal") String code_postal);
-
-    @WebMethod
-    public Personne getPatientByNumeroSecu(@WebParam(name="num_secu") Integer num_secu);
-    
-    @WebMethod
-    public String createMedecin(@WebParam(name="nom") String nom, @WebParam(name="num_secu") Integer num_secu, 
-                @WebParam(name="adresse") String adresse, @WebParam(name="email") String email,
-                @WebParam(name="telephone") String telephone,@WebParam(name="code_postal") String code_postal ,@WebParam(name="nom_cabinet") String cabinet, @WebParam(name="specialite") String specialite);
-    
-    @WebMethod
-    public List<MedecinCrenaux> getCrenauxSpecialite(@WebParam(name="specialite") String specialite);
-    
     
     void create(Patient patient);
 

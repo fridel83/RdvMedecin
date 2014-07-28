@@ -29,4 +29,15 @@ public class PersonneFacade extends AbstractFacade<Personne> implements Personne
         super(Personne.class);
     }
     
+    public Personne findPersonneByNumeroSecu(Integer num_secu)
+    {
+        try{
+            Personne personne=(Personne) getEntityManager().createNamedQuery("Personne.findByNumeroSecu").setParameter("numeroSecu",
+                num_secu).getSingleResult();
+            return personne;
+        }catch(Exception e)
+        {
+            return null;
+        }
+    }
 }
