@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.rdvmedecin</groupId>
         <artifactId>rdvmedecinWs</artifactId>
-        <version>1.0</version>
+        <version>1.1-SNAPSHOT</version>
     </parent>
     <artifactId>WebService</artifactId>
     <packaging>jar</packaging>
@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.rdvmedecin</groupId>
             <artifactId>rdvmedecinEjb</artifactId>
-            <version>1.0</version>
+            <version>1.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
