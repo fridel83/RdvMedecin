@@ -226,6 +226,17 @@
 		</pluginManagement>
 
 	</build>
+        <distributionManagement>
+		<repository>
+			<id>internal</id>
+			<url>https://github.com/fridel83/RdvMedecin/content/repositories/livrable</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<uniqueVersion>false</uniqueVersion>
+			<url>https://github.com/fridel83/RdvMedecin/content/repositories/snaphot</url>
+		</snapshotRepository>
+	</distributionManagement>
   <modules>
     <module>rdvmedecinEjb</module>
     <module>WebService</module>
