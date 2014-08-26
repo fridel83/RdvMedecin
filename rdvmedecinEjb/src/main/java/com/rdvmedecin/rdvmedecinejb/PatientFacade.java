@@ -31,7 +31,7 @@ import javax.persistence.Query;
             endpointInterface="RdvMedecin.ejb.PatientFacadeLocal",
             portName="RdvWebServicePort")
 public class PatientFacade extends AbstractFacade<Patient> implements PatientFacadeLocal {
-    @PersistenceContext(unitName = "RdvMedecinPU")
+    @PersistenceContext(unitName = "com.rdvmedecin_rdvmedecinEjb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;
     
     private Personne personne;
