@@ -16,7 +16,6 @@ import com.rdvmedecin.rdvmedecinentities.Ville;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
-import javax.jws.WebService;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -26,7 +25,7 @@ import javax.persistence.Query;
  * @author fridel
  */
 @Stateless
-public class PatientFacade extends AbstractFacade<Patient> //implements PatientFacadeLocal 
+public class PatientFacade extends AbstractFacade<Patient> implements PatientFacadeLocal 
 {
     @PersistenceContext(unitName = "com.rdvmedecin_monWebservice-ejb_ejb_1.2-SNAPSHOTPU")
     private EntityManager em;

@@ -238,7 +238,6 @@
 		</snapshotRepository>
 	</distributionManagement>
   <modules>
-    <module>rdvmedecinEjb</module>
     <module>WebService</module>
   </modules>
 </project>

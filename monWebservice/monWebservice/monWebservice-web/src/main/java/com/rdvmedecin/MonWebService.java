@@ -28,8 +28,7 @@ import javax.jws.WebService;
 @WebService()
 public class MonWebService  {
 
-    @EJB
-    PatientFacade patientFac;
+    PatientFacade patientFac=new PatientFacade();
    
     @WebMethod
     public String createPatient(@WebParam(name="WsCaller") String wscaller, @WebParam(name="nom") String nom, @WebParam(name="num_secu") Integer num_secu, 
@@ -61,7 +60,7 @@ public class MonWebService  {
         else
         {
             return_code.setReturn_code(-2);
-            return_code.setLibelle("test");
+            return_code.setLibelle(config.getError_caller());
             response.setReturn_code(return_code);
         }
         return response;
