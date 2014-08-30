@@ -6,6 +6,7 @@
 
 package com.rdvmedecin;
 
+import com.rdvmedecin.proprietes.Properties;
 import com.rdvmedecin.ejb.PatientFacade;
 import com.rdvmedecin.proprietes.MesConfig;
 import com.rdvmedecin.rdvmedecinentities.MedecinCrenaux;
@@ -27,13 +28,15 @@ import javax.jws.WebService;
 @Stateless
 @WebService()
 public class MonWebService  {
-
-    PatientFacade patientFac=new PatientFacade();
+    
+    private Properties propriete;
+    private PatientFacade patientFac=new PatientFacade();
    
     @WebMethod
     public String createPatient(@WebParam(name="WsCaller") String wscaller, @WebParam(name="nom") String nom, @WebParam(name="num_secu") Integer num_secu, 
                 @WebParam(name="adresse") String adresse, @WebParam(name="email") String email,
-                @WebParam(name="telephone") String telephone,@WebParam(name="code_postal") String code_postal) {
+                @WebParam(name="telephone") String telephone,@WebParam(name="code_postal") String code_postal) 
+    {
         MesConfig config = new MesConfig("MesConfig.properties");
         if(!(wscaller.equals((String) config.getCaller2()) || wscaller.equals((String) config.getCaller2())))
         {
@@ -45,7 +48,8 @@ public class MonWebService  {
 
     
     @WebMethod
-    public PatientByNumeroSecuResponse getPatientByNumeroSecu(@WebParam(name="WsCaller") String wscaller, @WebParam(name="num_secu") Integer num_secu) {
+    public PatientByNumeroSecuResponse getPatientByNumeroSecu(@WebParam(name="WsCaller") String wscaller, @WebParam(name="num_secu") Integer num_secu) 
+    {
         PatientByNumeroSecuResponse response = new PatientByNumeroSecuResponse();
         ReturnCode return_code= new ReturnCode();
         MesConfig config = new MesConfig("webserviceproperties.properties");
@@ -76,6 +80,14 @@ public class MonWebService  {
     @WebMethod
     public List<MedecinCrenaux> getCrenauxSpecialite(@WebParam(name="WsCaller") String wscaller, @WebParam(name="specialite") String specialite) {
         return patientFac.getCrenauxSpecialite(wscaller, specialite);
+    }
+
+    public Properties getPropriete() {
+        return propriete;
+    }
+
+    public void setPropriete(Properties propriete) {
+        this.propriete = propriete;
     }
 
 }
