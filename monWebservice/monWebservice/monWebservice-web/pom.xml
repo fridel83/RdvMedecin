@@ -21,9 +21,16 @@
     
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>monWebservice-ejb</artifactId>
-            <version>${project.version}</version>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.rdvmedecin</groupId>
+            <artifactId>rdvmedecinEjb</artifactId>
+            <version>1.2-SNAPSHOT</version>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>javax</groupId>

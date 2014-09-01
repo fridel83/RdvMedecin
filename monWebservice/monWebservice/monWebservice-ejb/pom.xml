@@ -32,7 +32,19 @@
             <version>2.5.1</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
+          <dependency>
+               <groupId>com.rdvmedecin</groupId>
+               <artifactId>monWebservice-web</artifactId>
+               <version>1.2-SNAPSHOT</version>
+               <type>war</type>
+          </dependency>
+          <dependency>
+               <groupId>dom4j</groupId>
+               <artifactId>dom4j</artifactId>
+               <version>1.6.1</version>
+               <type>jar</type>
+          </dependency>
+          <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>

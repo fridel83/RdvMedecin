@@ -6,10 +6,8 @@
 
 package com.rdvmedecin;
 
-import com.rdvmedecin.ejb.PatientFacade;
-import com.rdvmedecin.proprietes.MesConfig;
+import com.rdvmedecin.ejb.PatientFacadeLocal;
 import com.rdvmedecin.rdvmedecinentities.MedecinCrenaux;
-import com.rdvmedecin.rdvmedecinentities.Patient;
 import com.rdvmedecin.rdvmedecinentities.Personne;
 import com.rdvmedecin.response.PatientByNumeroSecuResponse;
 import com.rdvmedecin.response.ReturnCode;
@@ -28,16 +26,16 @@ import javax.jws.WebService;
 @WebService()
 public class MonWebService  {
 
-    PatientFacade patientFac=new PatientFacade();
+    @EJB
+    private PatientFacadeLocal patientFac;
    
     @WebMethod
     public String createPatient(@WebParam(name="WsCaller") String wscaller, @WebParam(name="nom") String nom, @WebParam(name="num_secu") Integer num_secu, 
                 @WebParam(name="adresse") String adresse, @WebParam(name="email") String email,
                 @WebParam(name="telephone") String telephone,@WebParam(name="code_postal") String code_postal) {
-        MesConfig config = new MesConfig("MesConfig.properties");
-        if(!(wscaller.equals((String) config.getCaller2()) || wscaller.equals((String) config.getCaller2())))
+        if( wscaller == Properties.CALLER1 || wscaller == Properties.CALLER1)
         {
-            
+            return patientFac.createPatient(wscaller, nom, num_secu, adresse, email, telephone, code_postal);
         }    
         return patientFac.createPatient(wscaller, nom, num_secu, adresse, email, telephone, code_postal);
     }
@@ -48,9 +46,8 @@ public class MonWebService  {
     public PatientByNumeroSecuResponse getPatientByNumeroSecu(@WebParam(name="WsCaller") String wscaller, @WebParam(name="num_secu") Integer num_secu) {
         PatientByNumeroSecuResponse response = new PatientByNumeroSecuResponse();
         ReturnCode return_code= new ReturnCode();
-        MesConfig config = new MesConfig("webserviceproperties.properties");
         //if(!(wscaller.equals((String) config.getCaller2()) || wscaller.equals((String) config.getCaller2())))
-        if(wscaller.equals("ALF"))
+        if(wscaller.equals(Properties.CALLER1) || wscaller == Properties.CALLER2)
         {
             return_code.setReturn_code(0);
             response.setReturn_code(return_code);
@@ -59,8 +56,8 @@ public class MonWebService  {
         }
         else
         {
-            return_code.setReturn_code(-2);
-            return_code.setLibelle(config.getError_caller());
+            return_code.setReturn_code(Properties.ERROR_CALLER_CODE);
+            return_code.setLibelle(Properties.ERROR_CALLER);
             response.setReturn_code(return_code);
         }
         return response;

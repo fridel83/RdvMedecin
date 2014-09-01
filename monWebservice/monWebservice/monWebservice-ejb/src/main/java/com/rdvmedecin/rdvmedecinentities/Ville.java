@@ -153,7 +153,8 @@ public class Ville implements Serializable {
         this.idville = idville;
         this.villeCodeCommune = villeCodeCommune;
     }
-
+    
+    @XmlTransient
     public Integer getIdville() {
         return idville;
     }
@@ -161,7 +162,8 @@ public class Ville implements Serializable {
     public void setIdville(Integer idville) {
         this.idville = idville;
     }
-
+    
+    @XmlTransient
     public String getVilleDepartement() {
         return villeDepartement;
     }
@@ -169,7 +171,8 @@ public class Ville implements Serializable {
     public void setVilleDepartement(String villeDepartement) {
         this.villeDepartement = villeDepartement;
     }
-
+    
+    @XmlTransient
     public String getVilleSlug() {
         return villeSlug;
     }
@@ -178,6 +181,7 @@ public class Ville implements Serializable {
         this.villeSlug = villeSlug;
     }
 
+    @XmlTransient
     public String getVilleNom() {
         return villeNom;
     }
@@ -194,6 +198,7 @@ public class Ville implements Serializable {
         this.villeNomSimple = villeNomSimple;
     }
 
+    @XmlTransient
     public String getVilleNomReel() {
         return villeNomReel;
     }
@@ -202,6 +207,7 @@ public class Ville implements Serializable {
         this.villeNomReel = villeNomReel;
     }
 
+    @XmlTransient
     public String getVilleNomSoundex() {
         return villeNomSoundex;
     }
@@ -210,6 +216,7 @@ public class Ville implements Serializable {
         this.villeNomSoundex = villeNomSoundex;
     }
 
+    @XmlTransient
     public String getVilleNomMetaphone() {
         return villeNomMetaphone;
     }
@@ -234,6 +241,7 @@ public class Ville implements Serializable {
         this.villeCommune = villeCommune;
     }
 
+    @XmlTransient
     public String getVilleCodeCommune() {
         return villeCodeCommune;
     }
@@ -242,6 +250,7 @@ public class Ville implements Serializable {
         this.villeCodeCommune = villeCodeCommune;
     }
 
+    @XmlTransient
     public Short getVilleArrondissement() {
         return villeArrondissement;
     }
@@ -250,6 +259,7 @@ public class Ville implements Serializable {
         this.villeArrondissement = villeArrondissement;
     }
 
+    @XmlTransient
     public String getVilleCanton() {
         return villeCanton;
     }
@@ -258,6 +268,7 @@ public class Ville implements Serializable {
         this.villeCanton = villeCanton;
     }
 
+    @XmlTransient
     public Short getVilleAmdi() {
         return villeAmdi;
     }
@@ -266,6 +277,7 @@ public class Ville implements Serializable {
         this.villeAmdi = villeAmdi;
     }
 
+    @XmlTransient
     public Integer getVillePopulation2010() {
         return villePopulation2010;
     }
@@ -274,6 +286,7 @@ public class Ville implements Serializable {
         this.villePopulation2010 = villePopulation2010;
     }
 
+    @XmlTransient
     public Integer getVillePopulation1999() {
         return villePopulation1999;
     }
@@ -282,6 +295,7 @@ public class Ville implements Serializable {
         this.villePopulation1999 = villePopulation1999;
     }
 
+    @XmlTransient
     public Integer getVillePopulation2012() {
         return villePopulation2012;
     }
@@ -290,6 +304,7 @@ public class Ville implements Serializable {
         this.villePopulation2012 = villePopulation2012;
     }
 
+    @XmlTransient
     public Integer getVilleDensite2010() {
         return villeDensite2010;
     }
@@ -298,6 +313,7 @@ public class Ville implements Serializable {
         this.villeDensite2010 = villeDensite2010;
     }
 
+    @XmlTransient
     public Float getVilleSurface() {
         return villeSurface;
     }
@@ -306,6 +322,7 @@ public class Ville implements Serializable {
         this.villeSurface = villeSurface;
     }
 
+    @XmlTransient
     public Float getVilleLongitudeDeg() {
         return villeLongitudeDeg;
     }
@@ -314,6 +331,7 @@ public class Ville implements Serializable {
         this.villeLongitudeDeg = villeLongitudeDeg;
     }
 
+    @XmlTransient
     public Float getVilleLatitudeDeg() {
         return villeLatitudeDeg;
     }
@@ -322,6 +340,7 @@ public class Ville implements Serializable {
         this.villeLatitudeDeg = villeLatitudeDeg;
     }
 
+    @XmlTransient
     public String getVilleLongitudeGrd() {
         return villeLongitudeGrd;
     }
@@ -330,6 +349,7 @@ public class Ville implements Serializable {
         this.villeLongitudeGrd = villeLongitudeGrd;
     }
 
+    @XmlTransient
     public String getVilleLatitudeGrd() {
         return villeLatitudeGrd;
     }
@@ -338,6 +358,7 @@ public class Ville implements Serializable {
         this.villeLatitudeGrd = villeLatitudeGrd;
     }
 
+    @XmlTransient
     public String getVilleLongitudeDms() {
         return villeLongitudeDms;
     }
@@ -346,6 +367,7 @@ public class Ville implements Serializable {
         this.villeLongitudeDms = villeLongitudeDms;
     }
 
+    @XmlTransient
     public String getVilleLatitudeDms() {
         return villeLatitudeDms;
     }
@@ -354,6 +376,7 @@ public class Ville implements Serializable {
         this.villeLatitudeDms = villeLatitudeDms;
     }
 
+    @XmlTransient
     public Integer getVilleZmin() {
         return villeZmin;
     }
@@ -362,6 +385,7 @@ public class Ville implements Serializable {
         this.villeZmin = villeZmin;
     }
 
+    @XmlTransient
     public Integer getVilleZmax() {
         return villeZmax;
     }
